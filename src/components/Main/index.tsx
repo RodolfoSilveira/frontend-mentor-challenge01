@@ -73,24 +73,26 @@ const Main = () => {
         <article>
           <div className="price-in-month-to-views">
             <p className="page-count">
-              {!!views && <span>{views}</span>} Pageviews
+              {!!views && <span aria-label="ranger result">{views}</span>}{' '}
+              Pageviews
             </p>
 
             <p className="month">
               {checked
                 ? !!discount && (
-                    <span className="price">
-                      ${Number(discount).toFixed(2)}
-                    </span>
-                  )
+                  <span className="price">
+                    ${Number(discount).toFixed(2)}
+                  </span>
+                )
                 : !!value && (
-                    <span className="price">${Number(value).toFixed(2)} </span>
-                  )}
+                  <span className="price">${Number(value).toFixed(2)} </span>
+                )}
               / month
             </p>
 
             <S.Ranger
               value={value}
+              aria-label="ranger values"
               onChange={(e) => setValue(e.target.value)}
             />
           </div>
